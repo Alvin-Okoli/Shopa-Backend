@@ -1,7 +1,5 @@
-import { v2 as cloudinary } from 'cloudinary'
 import multer from 'multer';
-import cloudinaryConfig from '../Utils/CloudinarySetup';
-import { getClothes } from '../Controllers/controller'
+import { clotheType, newClothes } from '../Controllers/controller.js'
 
 // configure multer
 const storage = multer.memoryStorage();
@@ -11,7 +9,8 @@ const upload = multer({ storage })
 import { Router } from "express";
 const router = Router();
 
+router.post('/category', clotheType);
+router.post('/adminPosts', upload.array('images', 8), newClothes)
 
-router.get('/clothes', getClothes)
 
 export default router

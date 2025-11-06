@@ -5,7 +5,7 @@ const ClothSchema = new mongoose.Schema({
     type: String,
     required: true,
     },
-    desription: {
+    description: {
         type: String,
         trim: true
     },
@@ -24,7 +24,7 @@ const ClothSchema = new mongoose.Schema({
     },
     categories: [{ 
         type: String,
-        enum: [' T-shirts', 'Shorts', 'Shirts', 'Hoodie', 'pants', 'joggers' ]
+        enum: ['T-shirts', 'Shorts', 'Shirts', 'Hoodie', 'pants', 'joggers' ]
      }],
     colors: [{ 
         name: String,

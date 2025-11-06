@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
-import router from './Router/route';
+import router from './Router/route.js';
 import mongoose, { connect } from 'mongoose';
 
 // Load environment variables
 import dotenv from 'dotenv';
 dotenv.config();
-const mongoDBURL = process.env.mongoDBURL;
+const mongoKey = process.env.MONGODBURL;
 const port = process.env.PORT || 3000;
 
 // Initialize Express app
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 // mongoose setup
-mongoose.connect(mongoDBURL)
+mongoose.connect(mongoKey)
 .then(console.log('db connected'))
 .catch(err=>console.error(err))
 
