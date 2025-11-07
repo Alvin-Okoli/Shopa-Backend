@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
 
-
 const orderSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   orderDate: { type: Date, default: Date.now },
@@ -34,3 +33,7 @@ const orderSchema = new mongoose.Schema({
   discounts: Number,
   couponCode: String
 }, { timestamps: true });
+
+const Order = mongoose.model('Order', orderSchema);
+
+export default Order;
